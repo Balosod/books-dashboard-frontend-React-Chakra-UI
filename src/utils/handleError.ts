@@ -21,7 +21,6 @@ export const handleError = (
       status: "error",
       duration: 5000,
       isClosable: true,
-      position: "top-right",
     });
   } else {
     console.error("[API Error]:", finalMessage);

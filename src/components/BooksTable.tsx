@@ -56,9 +56,23 @@ const BooksTable: React.FC = () => {
         await updateBook({
           variables: { id: Number(editingBook.id), data: bookData },
         });
+        toast({
+          title: "Book updated",
+          description: `"${bookData.name}" has been updated successfully.`,
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
       } else {
         // Create new book
         await createBook({ variables: { data: bookData } });
+        toast({
+          title: "Book created",
+          description: `"${bookData.name}" has been added successfully.`,
+          status: "success",
+          duration: 4000,
+          isClosable: true,
+        });
       }
       refetch(); // refresh the table
       onClose(); // close modal
@@ -72,6 +86,13 @@ const BooksTable: React.FC = () => {
   const handleDelete = async (id: number) => {
     try {
       await deleteBook({ variables: { id: Number(id) } });
+      toast({
+        title: "Book deleted",
+        description: "Book has been deleted successfully.",
+        status: "success",
+        duration: 4000,
+        isClosable: true,
+      });
       refetch(); // refresh the table
     } catch (err: any) {
       handleError(err, toast);

@@ -43,7 +43,6 @@ export const ApolloWrapper: React.FC<Props> = ({ children }) => {
           const token = await getAccessTokenSilently({
             authorizationParams: {
               audience: process.env.REACT_APP_AUDIENCE, // Auth0 API audience
-              scope: "read:books", // permission scope
             },
           });
 

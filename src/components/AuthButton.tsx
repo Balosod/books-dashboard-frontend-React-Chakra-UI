@@ -29,7 +29,6 @@ export const AuthButton: React.FC = () => {
               loginWithRedirect({
                 authorizationParams: {
                   audience: process.env.REACT_APP_AUDIENCE, // Auth0 API audience
-                  scope: process.env.REACT_APP_SCOPE, // permission scope for login
                 },
               })
             }

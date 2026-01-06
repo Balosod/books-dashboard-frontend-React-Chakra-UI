@@ -114,14 +114,14 @@ const BooksTable: React.FC = () => {
   }
 
   return (
-    <Box>
+    <Box overflowX="auto">
       {/* Button to open modal to add a new book */}
       <Button colorScheme="blue" mb={4} onClick={openCreateModal}>
         Add Book
       </Button>
 
       {/* Table displaying books */}
-      <Table variant="simple">
+      <Table variant="simple" size={{ base: "sm", md: "md" }}>
         <Thead>
           <Tr>
             <Th>ID</Th>

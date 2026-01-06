@@ -34,7 +34,7 @@ const BookModal: React.FC<ModalProps> = ({
       setName(""); // reset fields if adding a new book
       setDescription("");
     }
-  }, [editingBook]);
+  }, [editingBook, isOpen]);
 
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
